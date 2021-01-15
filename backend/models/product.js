@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import products from "../data/products";
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -27,6 +26,10 @@ const productSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
+    },
+    name: {
+      type: String,
+      required: true,
     },
     image: {
       type: String,

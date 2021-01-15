@@ -29,7 +29,8 @@ const importData = async () => {
 
     await Product.insertMany(sampleProducts);
 
-    console.log("data imported finished.");
+    console.log("data import finished.");
+    process.exit(0);
   } catch (error) {
     console.log(error);
     process.exit(1);
@@ -43,6 +44,7 @@ const destoryData = async () => {
     await Product.deleteMany();
     await User.deleteMany();
     console.log("data cleared from database.");
+    process.exit(0);
   } catch (error) {
     console.log(error);
     process.exit(1);
