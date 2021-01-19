@@ -58,3 +58,27 @@ export const getUserProfile = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 });
+
+export const updateUserProfile = asyncHandler(async (req, res) => {
+  if (req.user) {
+    const { _id, name, email, isAdmin } = req.user;
+    const user = await User.findOne(_id);
+    user.name = req.body.name || name;
+    user.email = req.body.email || email;
+
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+    const updatedUser = await user.save();
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: generateToken(updatedUser._id),
+    });
+  } else {
+    res.status(401);
+    throw new Error("User not found");
+  }
+});
