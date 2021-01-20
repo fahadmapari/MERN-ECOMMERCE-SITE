@@ -15,3 +15,11 @@ h1 {
 h3 {
   padding: 1rem 0rem;
 }
+
+.notfounderror {
+  text-align: center;
+}
+
+.notfounderror img {
+  width: 100%;
+}
