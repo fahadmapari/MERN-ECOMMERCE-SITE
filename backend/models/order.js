@@ -26,7 +26,7 @@ const orderSchema = new mongooose.Schema(
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
     },
-    paymentMehtod: {
+    paymentMethod: {
       type: String,
       required: true,
     },
