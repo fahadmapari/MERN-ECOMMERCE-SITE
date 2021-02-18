@@ -20,4 +20,4 @@
 ![alt text](https://i.imgur.com/XbnPNyn.png)
 
 
-(this project is not finished yet also needs lot of refacotring)
+(this project is not finished yet also needs lot of refactoring)
